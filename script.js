@@ -10,6 +10,9 @@ var pos_terra = null,
 	pos_nave = null;
 
 // 
+var angulo = 0;
+
+// 
 var img_nave, 
 	img_terra, 
 	img_estrelas, 
@@ -82,7 +85,17 @@ function draw() {
 // 
 function desenha_terra(x, y) {
 	// 
-	image(img_terra, 450, 140);
+	push();
+	// 
+	translate(450 + 400, 140 + 395);
+	// 
+	rotate(angulo);
+	// 
+	angulo += 0.01 * PI/64;
+	// 
+	image(img_terra, -400, -395);
+	// 
+	pop();
 }
 
 // 
